@@ -30,8 +30,15 @@ As a home cook, I often find it challenging to keep my collection of recipes org
 To address this issue, I need an iOS application that allows me to efficiently manage my recipes. The app should enable me to add, edit, and delete recipes, as well as view them in a gallery format for quick browsing. The app should also allow me to filter recipes by recently added recipes, favorites, or cooking time, and include a simple search function to quickly find recipes based on keywords. Additionally, it should incorporate an AI feature that generates recipe suggestions based on the ingredients I currently have at home, helping me minimize waste. Overall, the app should provide a user-friendly experience that keeps my recipes organized and easily accessible.
 ## Requirements
 
-TODO: Document the requirements you fulfilled with your app. Discuss them with your tutor.
-
+I want to be able to…
+• … add a new recipe with details such as title, ingredients, instructions, and cooking time.
+• … edit existing recipes to update title, ingredients, instructions, or cooking time as needed.
+• … delete recipes that I no longer want to keep.
+• … view my recipes in a gallery format.
+• … filter recipes by drecently added recipes, favorites, or cooking time.
+• … search for recipes using keywords related to ingredients or titles.
+• … bookmark favorite recipes for easy access.
+• … generate recipe suggestions based on the ingredients I have at home using AI. (optional)
 
 ## Analysis
 
