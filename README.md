@@ -25,8 +25,11 @@ Until the deadline all of your PRs **need to be merged** and your final app **ne
 
 ## Problem Statement (max. 500 words)
 
-TODO: Add your problem statement here. 
+As a student who lives independently, it can be quite challenging, dividing your time between studies and doing household stuff. Cooking is one of the things I spend a lot of time to think about. I usually only buy groceries once a week, and hence I need to plan my meal plan accordingly in advance. And sometimes, it's not easy to find a meal plan idea for the whole week only in one day.
 
+To help me overcome this challenge, I need an iOS application that can help me to generate meal recipes for me. I can maybe input a few key ingredients, and this app (with the help of AI) will generete a suitable recipe for me.
+
+Additionally, the app should be able to store the recipes that has been generated. This overview should be easy to navigate.
 ## Requirements
 
 TODO: Document the requirements you fulfilled with your app. Discuss them with your tutor.
