@@ -25,14 +25,13 @@ Until the deadline all of your PRs **need to be merged** and your final app **ne
 
 ## Problem Statement (max. 500 words)
 
-As a student who lives independently, it can be quite challenging, dividing your time between studies and doing household stuff. Cooking is one of the things I spend a lot of time to think about. I usually only buy groceries once a week, and hence I need to plan my meal plan accordingly in advance. And sometimes, it's not easy to find a meal plan idea for the whole week only in one day.
+As a home cook, I often find it challenging to keep my collection of recipes organized and accessible. With many sources of inspiration, I struggle to manage my favorite recipes, often forgetting where I saved them or how to quickly find what I want to cook based on the ingredients I have on hand. This disorganization can lead to wasted ingredients.
 
-To help me overcome this challenge, I need an iOS application that can help me to generate meal recipes for me. I can maybe input a few key ingredients, and this app (with the help of AI) will generete a suitable recipe for me.
-
-Additionally, the app should be able to store the recipes that has been generated. This overview should be easy to navigate.
+To address this issue, I need an iOS application that allows me to efficiently manage my recipes. The app should enable me to add, edit, and delete recipes, as well as view them in a gallery format for quick browsing. The app should also allow me to filter recipes by recently added recipes, favorites, or cooking time, and include a simple search function to quickly find recipes based on keywords. Additionally, it should incorporate an AI feature that generates recipe suggestions based on the ingredients I currently have at home, helping me minimize waste. Overall, the app should provide a user-friendly experience that keeps my recipes organized and easily accessible.
 ## Requirements
 
 TODO: Document the requirements you fulfilled with your app. Discuss them with your tutor.
+
 
 ## Analysis
 
