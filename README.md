@@ -31,14 +31,16 @@ To address this issue, I need an iOS application that allows me to efficiently m
 ## Requirements
 
 I want to be able to…
-• … add a new recipe with details such as title, ingredients, instructions, and cooking time.
-• … edit existing recipes to update title, ingredients, instructions, or cooking time as needed.
-• … delete recipes that I no longer want to keep.
-• … view my recipes in a gallery format.
-• … filter recipes by drecently added recipes, favorites, or cooking time.
-• … search for recipes using keywords related to ingredients or titles.
-• … bookmark favorite recipes for easy access.
-• … generate recipe suggestions based on the ingredients I have at home using AI. (optional)
+
+- … add a new recipe with details such as title, ingredients, instructions, and cooking time.
+- … add a new recipe with details such as title, ingredients, instructions, and cooking time.
+- … edit existing recipes to update title, ingredients, instructions, or cooking time as needed.
+- … delete recipes that I no longer want to keep.
+- … view my recipes in a gallery format.
+- … filter recipes by drecently added recipes, favorites, or cooking time.
+- … search for recipes using keywords related to ingredients or titles.
+- … bookmark favorite recipes for easy access.
+- … generate recipe suggestions based on the ingredients I have at home using AI. (optional)
 
 ## Analysis
 
