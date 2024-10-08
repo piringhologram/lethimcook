@@ -36,7 +36,7 @@ I want to be able to…
 - … edit existing recipes to update title, ingredients, instructions, as needed.
 - … delete recipes that I no longer want to keep.
 - … view my recipes in a gallery format.
-- … filter recipes by drecently added recipes, or favorites.
+- … filter recipes by recently added recipes, or favorites.
 - … search for recipes using keywords related to ingredients or titles.
 - … bookmark favorite recipes for easy access.
 - … generate recipe suggestions based on the ingredients I have at home using AI. (optional)
@@ -50,4 +50,13 @@ TODO: Include a system design overview describing your application.
 
 ## Product Backlog
 
-TODO: Add a product backlog and don't forget to update it with each MR.
+| id | name | priority |
+| ------ | ------ | ------ |
+|   1   | Add new recipe | Major |
+|   2   | Edit existing recipe | Minor |
+|   3   | Delete existing recipe | Minor |
+|   4   | View recipes in gallery | Major |
+|   5   | Filter recipes | Minor |
+|   6   | Search for recipe | Major |
+|   7   | Bookmark favorite recipe | Minor |
+|   8   | Generate Recipe suggestions | Minor (optional) |
