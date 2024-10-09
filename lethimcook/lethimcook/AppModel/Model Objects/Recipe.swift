@@ -39,6 +39,9 @@ public struct Recipe {
 // Used so that object can be identifiable and retrivied by specific ID
 extension Recipe: Identifiable { }
 
+// Used because navigationLink needs their components to be Hashable
+extension Recipe: Hashable { }
+
 extension Recipe: Codable { }
 
 extension Recipe: Comparable {
