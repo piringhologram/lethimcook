@@ -14,7 +14,7 @@ public struct Recipe {
     public var instructions: String
     public var isFavorite: Bool
     public var timeAndDate: Date
-    public var image: Image?
+    //public var image: Image?
     
     /// - Parameters:
     ///   - id:
@@ -32,6 +32,17 @@ public struct Recipe {
         self.instructions = instructons
         self.isFavorite = false
         self.timeAndDate = Date()
-        self.image = image
+        //self.image = image
+    }
+    
+}
+// Used so that object can be identifiable and retrivied by specific ID
+extension Recipe: Identifiable { }
+
+extension Recipe: Codable { }
+
+extension Recipe: Comparable {
+    public static func < ( a: Recipe, b: Recipe ) -> Bool {
+        a.timeAndDate < b.timeAndDate
     }
 }
