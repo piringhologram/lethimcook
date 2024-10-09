@@ -11,14 +11,13 @@ struct RecipeOverviewView: View {
     
     @State private var isDarkMode = false
     
+    @Environment(Model.self) private var model: Model
+    
     var body: some View {
         NavigationStack {
             
             ScrollView(.vertical){
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundStyle(.tint)
-                Text("Hello World")
+                RecipeGridView()
             }
             .navigationBarTitle("Recipe Gallery")
             .toolbar {
@@ -43,4 +42,5 @@ struct RecipeOverviewView: View {
 
 #Preview {
     RecipeOverviewView()
+        .environment(MockModel() as Model)
 }

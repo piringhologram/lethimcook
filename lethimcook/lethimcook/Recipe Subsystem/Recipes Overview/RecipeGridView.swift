@@ -12,25 +12,17 @@ struct RecipeGridView: View {
     @Environment(Model.self) private var model: Model
     
     private let columns = [
-        GridItem(.flexible(minimum: 100)),
-        GridItem(.flexible(minimum: 100))
+        GridItem(.flexible(minimum: 50)),
+        GridItem(.flexible(minimum: 50))
     ]
     var body: some View {
         LazyVGrid(columns: columns, spacing: 20) {
             ForEach(model.recipes) { recipe in
                 NavigationLink(value: recipe, label: {
-                    ZStack {
-                        // TODO : Background for each component
-                        VStack {
-                            // TODO : image
-                            Text(recipe.title)
-                                .font(.system(size: 24, weight: .semibold))
-                                .foregroundColor(.primary)
-                        }
-                    }
+                    RecipeCardView(recipe: recipe)
                 })
             }
-        }
+        }.padding()
         
     }
 }
