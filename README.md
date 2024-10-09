@@ -32,8 +32,8 @@ To address this issue, I need an iOS application that allows me to efficiently m
 
 I want to be able to…
 
-- … add a new recipe with details such as title, ingredients, and instructions.
-- … edit existing recipes to update title, ingredients, instructions, as needed.
+- … add a new recipe with details such as title, ingredients, image and instructions.
+- … edit existing recipes to update title, ingredients, instructions and image as needed.
 - … delete recipes that I no longer want to keep.
 - … view my recipes in a gallery format.
 - … filter recipes by recently added recipes, or favorites.
