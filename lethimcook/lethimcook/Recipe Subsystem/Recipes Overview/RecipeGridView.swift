@@ -23,7 +23,6 @@ struct RecipeGridView: View {
                 })
             }
         }.padding()
-        
     }
 }
 

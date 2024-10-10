@@ -34,7 +34,6 @@ public struct Recipe {
         self.timeAndDate = Date()
         //self.image = image
     }
-    
 }
 // Used so that object can be identifiable and retrivied by specific ID
 extension Recipe: Identifiable { }

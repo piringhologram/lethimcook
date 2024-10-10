@@ -15,16 +15,15 @@ struct RecipeCardView: View {
             // TODO : image
             Color.gray
                 .frame(height: 160)
-            VStack (alignment: .leading) {
+            VStack(alignment: .leading) {
                 Text(recipe.title)
                     .font(.system(size: 20, weight: .semibold))
                     .foregroundColor(.primary)
                     .padding(.top, 10)
                     .padding(.bottom, 20)
-                    .padding(.horizontal,20)
+                    .padding(.horizontal, 20)
                     .multilineTextAlignment(.leading)
                     .frame( maxWidth: .infinity, alignment: .leading)
-                    
             }
         }
         .frame(minHeight: 150)
@@ -35,5 +34,8 @@ struct RecipeCardView: View {
 }
 
 #Preview("RecipeCardView Previews") {
-    RecipeCardView(recipe: Recipe(id: UUID(), title: "Fried Egg", ingredients: "Egg and Stuff", instructons: "Add egg then cook"))
+    RecipeCardView(recipe: Recipe(id: UUID(),
+                                  title: "Fried Egg",
+                                  ingredients: "Egg and Stuff",
+                                  instructons: "Add egg then cook"))
 }

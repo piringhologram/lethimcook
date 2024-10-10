@@ -8,15 +8,13 @@
 import SwiftUI
 
 struct RecipeOverviewView: View {
-    
     @State private var isDarkMode = false
     
     @Environment(Model.self) private var model: Model
     
     var body: some View {
         NavigationStack {
-            
-            ScrollView(.vertical){
+            ScrollView(.vertical) {
                 RecipeGridView()
             }
             .navigationBarTitle("Recipe Gallery")
@@ -27,12 +25,13 @@ struct RecipeOverviewView: View {
                                    label: {
                                 Image(systemName: "plus")
                             })
-                        }
+                }
                 ToolbarItem {
                     Toggle(isOn: $isDarkMode,
                            label: {
-                            Image(systemName: isDarkMode ? "sun.max.fill" : "moon.fill")
-                           })                }
+                        Image(systemName: isDarkMode ? "sun.max.fill" : "moon.fill")
+                    })
+                }
             }
         }
         

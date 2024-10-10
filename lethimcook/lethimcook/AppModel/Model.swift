@@ -39,7 +39,6 @@ import SwiftUI
         }
         
         self.recipes.append(newRecipe)
-        
     }
 }
 
