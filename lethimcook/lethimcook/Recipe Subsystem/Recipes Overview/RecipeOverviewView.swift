@@ -34,7 +34,7 @@ struct RecipeOverviewView: View {
                 }
             }
         }
-        .padding()
+        .padding(5)
     }
 }
 
