@@ -12,15 +12,18 @@ public class MockModel: Model {
         let recipeOne = Recipe(id: UUID(),
                                title: "Fried Egg",
                                ingredients: "Egg and Stuff",
-                               instructons: "Add egg then cook")
+                               instructons: "Add egg then cook",
+                               image: "recipe1")
         let recipeTwo = Recipe(id: UUID(),
                                title: "Boiled Egg",
                                ingredients: "Egg and Pepper",
-                               instructons: "Add egg then boil")
+                               instructons: "Add egg then boil",
+                               image: "recipe2")
         let recipeThree = Recipe(id: UUID(),
-                                 title: "Sunny Side Egg with some fancy stuff",
+                                 title: "Spaghetti with some fancy truffle",
                                  ingredients: "Salt and Egg",
-                                 instructons: "Add egg then sun")
+                                 instructons: "Add egg then sun",
+                                 image: "recipe3")
         
         let recipes = [recipeOne, recipeTwo, recipeThree]
         

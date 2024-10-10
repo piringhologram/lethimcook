@@ -12,6 +12,7 @@ struct LethimcookApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(MockModel() as Model)
         }
     }
 }

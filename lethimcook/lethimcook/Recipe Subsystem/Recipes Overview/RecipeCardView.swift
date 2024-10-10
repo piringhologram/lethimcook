@@ -12,24 +12,34 @@ struct RecipeCardView: View {
     
     var body: some View {
         VStack {
-            // TODO : image
-            Color.gray
-                .frame(height: 160)
-            VStack(alignment: .leading) {
-                Text(recipe.title)
-                    .font(.system(size: 20, weight: .semibold))
-                    .foregroundColor(.primary)
-                    .padding(.top, 10)
-                    .padding(.bottom, 20)
-                    .padding(.horizontal, 20)
-                    .multilineTextAlignment(.leading)
-                    .frame( maxWidth: .infinity, alignment: .leading)
+            ZStack {
+                Image(recipe.image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(maxWidth: UIScreen.main.bounds.width * 0.43, maxHeight: 150)
+                    .clipped()
             }
+            .overlay(alignment: .bottomLeading) {
+                Button {
+                    // TODO
+                } label: {
+                    Image(systemName: "heart.circle.fill")
+                        .foregroundColor(.white)
+                        .padding(12)
+                }
+            }
+            Text(recipe.title)
+                .font(.system(size: 20, weight: .bold))
+                .foregroundColor(.primary)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.top, 10)
+                .padding(.bottom, 20)
+                .padding(.horizontal, 10)
+                .multilineTextAlignment(.leading)
         }
-        .frame(minHeight: 150)
-        .background(Color.blue)
+        .background(Color(.tertiarySystemFill))
         .cornerRadius(12)
-        .shadow(radius: 2)
+        .frame(maxWidth: UIScreen.main.bounds.width * 0.43)
     }
 }
 
@@ -37,5 +47,6 @@ struct RecipeCardView: View {
     RecipeCardView(recipe: Recipe(id: UUID(),
                                   title: "Fried Egg",
                                   ingredients: "Egg and Stuff",
-                                  instructons: "Add egg then cook"))
+                                  instructons: "Add egg then cook",
+                                  image: "recipe2"))
 }

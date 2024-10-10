@@ -14,7 +14,7 @@ public struct Recipe {
     public var instructions: String
     public var isFavorite: Bool
     public var timeAndDate: Date
-    //public var image: Image?
+    public var image: String
     
     /// - Parameters:
     ///   - id:
@@ -25,14 +25,14 @@ public struct Recipe {
     ///  - Other attributes:
     ///    - isFavorite: marks, whether a recipe is marks as the user favorite or not. Default is false
     ///    - timeAndDate: The date this recipe is created
-    public init(id: UUID? = nil, title: String, ingredients: String, instructons: String, image: Image? = nil) {
+    public init(id: UUID? = nil, title: String, ingredients: String, instructons: String, image: String) {
         self.id = id
         self.title = title
         self.ingredients = ingredients
         self.instructions = instructons
         self.isFavorite = false
         self.timeAndDate = Date()
-        //self.image = image
+        self.image = image
     }
 }
 // Used so that object can be identifiable and retrivied by specific ID

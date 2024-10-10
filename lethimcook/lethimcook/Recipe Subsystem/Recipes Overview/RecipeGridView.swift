@@ -12,8 +12,8 @@ struct RecipeGridView: View {
     @Environment(Model.self) private var model: Model
     
     private let columns = [
-        GridItem(.flexible(minimum: 50)),
-        GridItem(.flexible(minimum: 50))
+        GridItem(.adaptive(minimum: 140), spacing: 20),
+        GridItem(.adaptive(minimum: 140), spacing: 20)
     ]
     var body: some View {
         LazyVGrid(columns: columns, spacing: 20) {

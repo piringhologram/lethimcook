@@ -9,16 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Recipe Gallery")
-        }
-        .padding()
+        RecipeOverviewView()
     }
 }
 
 #Preview {
     ContentView()
+        .environment(MockModel() as Model)
 }
