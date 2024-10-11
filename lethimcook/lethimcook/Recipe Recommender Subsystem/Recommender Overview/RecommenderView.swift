@@ -7,8 +7,6 @@
 import SwiftUI
 
 struct RecommenderView: View {
-    @State private var isDarkMode = false
-    
     @Environment(Model.self) private var model: Model
     
     var body: some View {
