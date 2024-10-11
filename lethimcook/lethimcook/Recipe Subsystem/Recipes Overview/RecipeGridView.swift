@@ -16,13 +16,14 @@ struct RecipeGridView: View {
         GridItem(.adaptive(minimum: 140), spacing: 20)
     ]
     var body: some View {
-        LazyVGrid(columns: columns, spacing: 20) {
+        LazyVGrid(columns: columns, spacing: 5) {
             ForEach(model.recipes) { recipe in
                 NavigationLink(value: recipe, label: {
                     RecipeCardView(recipe: recipe)
                 })
             }
-        }.padding()
+        }
+        .padding()
     }
 }
 

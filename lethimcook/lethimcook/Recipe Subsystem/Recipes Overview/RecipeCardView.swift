@@ -16,7 +16,7 @@ struct RecipeCardView: View {
                 Image(recipe.image)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(maxWidth: UIScreen.main.bounds.width * 0.43, maxHeight: 150)
+                    .frame(width: UIScreen.main.bounds.width * 0.43, height: 135)
                     .clipped()
             }
             .overlay(alignment: .bottomLeading) {
@@ -29,7 +29,7 @@ struct RecipeCardView: View {
                 }
             }
             Text(recipe.title)
-                .font(.system(size: 20, weight: .bold))
+                .font(.system(size: 18, weight: .bold))
                 .foregroundColor(.primary)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.top, 10)
@@ -39,13 +39,13 @@ struct RecipeCardView: View {
         }
         .background(Color(.tertiarySystemFill))
         .cornerRadius(12)
-        .frame(maxWidth: UIScreen.main.bounds.width * 0.43)
+        .frame(width: UIScreen.main.bounds.width * 0.43, height: 230)
     }
 }
 
 #Preview("RecipeCardView Previews") {
     RecipeCardView(recipe: Recipe(id: UUID(),
-                                  title: "Fried Egg",
+                                  title: "Pasta Carbonara hello",
                                   ingredients: "Egg and Stuff",
                                   instructons: "Add egg then cook",
                                   image: "recipe2"))
