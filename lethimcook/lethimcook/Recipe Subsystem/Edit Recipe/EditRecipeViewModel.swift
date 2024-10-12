@@ -14,6 +14,8 @@ import SwiftUI
     var instructions: String = ""
     var date = Date()
     var image: String = ""
+    var imageURL: URL?
+    var customImageData: Data?
     var loaded = false
     var showSaveProgressView = false
     var showDeleteProgressView = false
@@ -27,7 +29,7 @@ import SwiftUI
     }
     
     var disableSaveButton: Bool {
-        title.isEmpty || ingredients.isEmpty || instructions.isEmpty || image.isEmpty
+        title.isEmpty || ingredients.isEmpty || instructions.isEmpty
     }
     
     init(_ model: Model, id: Recipe.ID) {
@@ -42,7 +44,9 @@ import SwiftUI
         self.title = recipe.title
         self.ingredients = recipe.ingredients
         self.instructions = recipe.instructions
-        self.image = recipe.image
+        self.image = recipe.image ?? ""
+        self.imageURL = recipe.imageURL
+        self.customImageData = recipe.customImageData
         
         self.loaded = true
     }
@@ -55,7 +59,9 @@ import SwiftUI
                             title: self.title,
                             ingredients: self.ingredients,
                             instructons: self.instructions,
-                            image: self.image)
+                            image: self.image,
+                            imageURL: self.imageURL,
+                            customImageData: self.customImageData)
         DispatchQueue.main.async {
             self.showSaveProgressView = true
         }

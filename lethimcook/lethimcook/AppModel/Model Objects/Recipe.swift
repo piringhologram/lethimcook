@@ -14,7 +14,21 @@ public struct Recipe {
     public var instructions: String
     public var isFavorite: Bool
     public var timeAndDate: Date
-    public var image: String
+    public var image: String?
+    public var imageURL: URL?
+    public var customImageData: Data?
+    
+    public var customImage: UIImage? {
+        get {
+            if let data = customImageData {
+                return UIImage(data: data)
+            }
+            return nil
+        }
+        set {
+            customImageData = newValue?.jpegData(compressionQuality: 1)
+        }
+    }
     
     /// - Parameters:
     ///   - id:
@@ -25,7 +39,13 @@ public struct Recipe {
     ///  - Other attributes:
     ///    - isFavorite: marks, whether a recipe is marks as the user favorite or not. Default is false
     ///    - timeAndDate: The date this recipe is created
-    public init(id: UUID? = nil, title: String, ingredients: String, instructons: String, image: String) {
+    public init(id: UUID? = nil,
+                title: String,
+                ingredients: String,
+                instructons: String,
+                image: String? = nil,
+                imageURL: URL? = nil,
+                customImageData: Data? = nil) {
         self.id = id
         self.title = title
         self.ingredients = ingredients
@@ -33,6 +53,8 @@ public struct Recipe {
         self.isFavorite = false
         self.timeAndDate = Date()
         self.image = image
+        self.imageURL = imageURL
+        self.customImageData = customImage?.jpegData(compressionQuality: 1)
     }
 }
 // Used so that object can be identifiable and retrivied by specific ID
