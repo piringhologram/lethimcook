@@ -24,6 +24,8 @@ struct RecipeGridView: View {
             }
         }
         .padding()
+        .navigationDestination(for: Recipe.self) { recipe in RecipeView(id: recipe.id)
+        }
     }
 }
 

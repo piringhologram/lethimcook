@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct RecipeOverviewView: View {
-    @State private var isDarkMode = false
-    
     @Environment(Model.self) private var model: Model
+    
+    @State private var addSheetOpen = false
     
     var body: some View {
         NavigationStack {
@@ -21,18 +21,16 @@ struct RecipeOverviewView: View {
             .toolbar {
                 ToolbarItem(placement:
                         .primaryAction) {
-                            Button(action: {},
-                                   label: {
+                            Button(action: {
+                                addSheetOpen.toggle()
+                            }, label: {
                                 Image(systemName: "plus")
                             })
                 }
-                ToolbarItem {
-                    Toggle(isOn: $isDarkMode,
-                           label: {
-                        Image(systemName: isDarkMode ? "sun.max.fill" : "moon.fill")
-                    })
-                }
             }
+            .sheet(isPresented: $addSheetOpen, content: {
+                EditRecipeView(self.model, id: nil)
+            })
         }
         .padding(5)
     }

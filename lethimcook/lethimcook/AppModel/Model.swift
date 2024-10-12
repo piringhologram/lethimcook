@@ -31,14 +31,25 @@ import SwiftUI
         if recipe.title.isEmpty {
             throw RecipeError.emptyName
         }
-        
-        var newRecipe = recipe
-        // Assign an ID if it is a newly created recipe
-        if newRecipe.id == nil {
-            newRecipe.id = UUID()
+        try? await Task.sleep(nanoseconds: 500_000_000)
+        DispatchQueue.main.async {
+            var newRecipe = recipe
+            // Assign an ID if it is a newly created recipe
+            if newRecipe.id == nil {
+                newRecipe.id = UUID()
+            }
+            
+            self.recipes.removeAll(where: { $0.id == newRecipe.id })
+            self.recipes.append(newRecipe)
+            self.recipes.sort()
         }
-        
-        self.recipes.append(newRecipe)
+    }
+    
+    public func delete(recipeId id: Recipe.ID) async {
+        try? await Task.sleep(nanoseconds: 500_000_000)
+        DispatchQueue.main.async {
+            self.recipes.removeAll(where: { $0.id == id })
+        }
     }
 }
 

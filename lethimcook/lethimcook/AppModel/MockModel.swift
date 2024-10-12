@@ -20,8 +20,8 @@ public class MockModel: Model {
                                instructons: "Add egg then boil",
                                image: "recipe2")
         let recipeThree = Recipe(id: UUID(),
-                                 title: "Spaghetti with some fancy truffle",
-                                 ingredients: "Salt and Egg",
+                                 title: "Spaghetti with some fancy shrooms",
+                                 ingredients: "Egg and Stuff\nPasta\nSome good cheese\nSalt and Pepper",
                                  instructons: "Add egg then sun",
                                  image: "recipe3")
         
