@@ -37,6 +37,7 @@ import SwiftUI
     
     func updateStates() {
         guard let recipe = model?.recipe(id) else {
+            print("NO MODEL UPDATE STATES")
             return
         }
         self.title = recipe.title
@@ -49,18 +50,20 @@ import SwiftUI
     
     func save() async {
         guard let model = model else {
+            print("NO MODEL")
             return
         }
-        let recipe = Recipe(id: self._id,
+        let recipe = Recipe(id: self.id,
                             title: self.title,
-                            ingredients: self.title,
-                            instructons: self.title,
+                            ingredients: self.ingredients,
+                            instructons: self.instructions,
                             image: self.image)
         DispatchQueue.main.async {
             self.showSaveProgressView = true
         }
         do {
             try await model.save(recipe)
+            print("saved")
         } catch {
             print("Unexpected error: \(error)")
         }
@@ -68,6 +71,22 @@ import SwiftUI
         DispatchQueue.main.async {
             self.updateStates()
             self.showSaveProgressView = false
+        }
+    }
+    
+    func delete() async {
+        guard let id = id, let model = model else {
+            return
+        }
+        DispatchQueue.main.async {
+            self.showDeleteProgressView = true
+        }
+        
+        await model.delete(recipeId: id)
+        
+        DispatchQueue.main.async {
+            self.updateStates()
+            self.showDeleteProgressView = false
         }
     }
 }

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct RecipeDetailView: View {
-    
     @Environment(Model.self) private var model: Model
     var id: Recipe.ID
     

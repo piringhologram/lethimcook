@@ -45,7 +45,7 @@ struct RecipeCardView: View {
 
 #Preview("RecipeCardView Previews") {
     RecipeCardView(recipe: Recipe(id: UUID(),
-                                  title: "Pasta Carbonara hello",
+                                  title: "Pasta Carbonara stuff",
                                   ingredients: "Egg and Stuff",
                                   instructons: "Add egg then cook",
                                   image: "recipe2"))

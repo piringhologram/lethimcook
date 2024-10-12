@@ -15,27 +15,29 @@ struct EditRecipeView: View {
     init(_ model: Model, id: Recipe.ID) {
         self._editRecipeViewModel = State(wrappedValue: EditRecipeViewModel(model, id: id))
     }
-    
+    var formView: some View {
+        Form {
+            Section(header: Text("Name")) {
+                TextField("Recipe", text: $editRecipeViewModel
+                    .title)
+            }
+            Section(header: Text("Ingredients")) {
+                TextEditor(text: $editRecipeViewModel
+                    .ingredients)
+            }
+            Section(header: Text("Instructions")) {
+                TextEditor(text: $editRecipeViewModel
+                    .instructions)
+            }
+            Section(header: Text("Image")) {
+                TextField("Image", text: $editRecipeViewModel
+                    .image)
+            }
+        }
+    }
     var body: some View {
         NavigationStack {
-            Form {
-                Section(header: Text("Name")) {
-                    TextField("Recipe", text: $editRecipeViewModel
-                        .title)
-                }
-                Section(header: Text("Ingredients")) {
-                    TextEditor(text: $editRecipeViewModel
-                        .ingredients)
-                }
-                Section(header: Text("Instructions")) {
-                    TextEditor(text: $editRecipeViewModel
-                        .instructions)
-                }
-                Section(header: Text("Image")) {
-                    TextField("Image", text: $editRecipeViewModel
-                        .image)
-                }
-            }
+            formView
             .task {
                 editRecipeViewModel.updateStates()
             }
@@ -50,7 +52,8 @@ struct EditRecipeView: View {
                     } label: {
                         Text("Save")
                             .bold()
-                    }.disabled(editRecipeViewModel.disableSaveButton)
+                    }
+                    .disabled(editRecipeViewModel.disableSaveButton)
                 }
             }
         }
