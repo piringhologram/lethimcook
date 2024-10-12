@@ -37,7 +37,6 @@ import SwiftUI
     
     func updateStates() {
         guard let recipe = model?.recipe(id) else {
-            print("NO MODEL UPDATE STATES")
             return
         }
         self.title = recipe.title
@@ -50,7 +49,6 @@ import SwiftUI
     
     func save() async {
         guard let model = model else {
-            print("NO MODEL")
             return
         }
         let recipe = Recipe(id: self.id,
@@ -63,7 +61,7 @@ import SwiftUI
         }
         do {
             try await model.save(recipe)
-            print("saved")
+//            print("saved")
         } catch {
             print("Unexpected error: \(error)")
         }

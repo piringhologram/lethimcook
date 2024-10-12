@@ -39,7 +39,7 @@ struct RecipeCardView: View {
         }
         .background(Color(.tertiarySystemFill))
         .cornerRadius(12)
-        .frame(width: UIScreen.main.bounds.width * 0.43, height: 230)
+        .frame(width: UIScreen.main.bounds.width * 0.43, height: 200)
     }
 }
 

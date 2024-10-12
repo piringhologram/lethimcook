@@ -43,9 +43,9 @@ struct RecipeView: View {
                                 .foregroundStyle(.red)
                         })
                     }, label: {
-                        Image(systemName: "ellipsis")
+                        Image(systemName: "ellipsis.circle")
                             .resizable()
-                            .font(.system(size: 30))
+                            .font(.system(size: 20))
                             .foregroundColor(Color.blue)
                     })
                 }
