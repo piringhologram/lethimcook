@@ -78,16 +78,14 @@ struct EditRecipeView: View {
             if editRecipeViewModel.customImageData != nil {
                 Button(role: .destructive) {
                     withAnimation {
-                    selectedPhoto = nil
-                    editRecipeViewModel.customImageData = nil
-                }
-            } label: {
-                Label("Remove Image", systemImage: "xmark")
-                    .foregroundStyle(.red)
+                        selectedPhoto = nil
+                        editRecipeViewModel.customImageData = nil
+                    }
+                } label: {
+                    Label("Remove Image", systemImage: "xmark")
+                        .foregroundStyle(.red)
                 }
             }
-            
-            
         }
         .task(id: selectedPhoto) {
             if let data = try? await selectedPhoto?.loadTransferable(type: Data.self) {

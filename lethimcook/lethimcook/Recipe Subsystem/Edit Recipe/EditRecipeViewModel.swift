@@ -99,7 +99,7 @@ import SwiftUI
         
         if let url = URL(string: urlString) {
             do {
-                let (data,_) = try await URLSession.shared.data(from: url)
+                let (data, _) = try await URLSession.shared.data(from: url)
                 let response = try JSONDecoder().decode(ImageResponse.self, from: data)
                 
                 print(data)

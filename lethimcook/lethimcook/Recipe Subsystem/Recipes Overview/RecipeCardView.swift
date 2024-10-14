@@ -30,29 +30,29 @@ struct RecipeCardView: View {
                             .aspectRatio(contentMode: .fill)
                             .frame(width: UIScreen.main.bounds.width * 0.43, height: 135)
                             .clipped()
-                    case .failure(_):
+                    case .failure:
                         Text("Failed to load image")
                     @unknown default:
                         EmptyView()
                     }
                 }
             } else {
-//                let recipe3 = "recipe1"
-//                let imageData3 = UIImage(named: recipe3)?.pngData()
-//                
-//                let customImage = UIImage(data: imageData3!)
-//                Image(uiImage: customImage!)
-//                    .resizable()
-//                    .aspectRatio(contentMode: .fill)
+////                let recipe3 = "recipe1"
+////                let imageData3 = UIImage(named: recipe3)?.pngData()
+////                
+////                let customImage = UIImage(data: imageData3!)
+////                Image(uiImage: customImage!)
+////                    .resizable()
+////                    .aspectRatio(contentMode: .fill)
+////                    .frame(width: UIScreen.main.bounds.width * 0.43, height: 135)
+////                    .clipped()
+//                Text("NO IMAGE")
 //                    .frame(width: UIScreen.main.bounds.width * 0.43, height: 135)
-//                    .clipped()
-                Text("NO IMAGE")
-                    .frame(width: UIScreen.main.bounds.width * 0.43, height: 135)
-//                Image(recipe.image ?? "")
-//                    .resizable()
-//                    .aspectRatio(contentMode: .fill)
-//                    .frame(width: UIScreen.main.bounds.width * 0.43, height: 135)
-//                    .clipped()
+////                Image(recipe.image ?? "")
+////                    .resizable()
+////                    .aspectRatio(contentMode: .fill)
+////                    .frame(width: UIScreen.main.bounds.width * 0.43, height: 135)
+////                    .clipped()
             }
         }
     }
