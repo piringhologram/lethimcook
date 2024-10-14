@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		ECB978372CBD310A00FF3D03 /* ConfettiView in Frameworks */ = {isa = PBXBuildFile; productRef = ECB978362CBD310A00FF3D03 /* ConfettiView */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		ECF1825C2CB5812D0046A18E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -29,9 +33,40 @@
 		ECF182652CB5812D0046A18E /* lethimcookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lethimcookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		ECB9782A2CBD2A5C00FF3D03 /* Exceptions for "lethimcook" folder in "lethimcook" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = ECF1824A2CB5812B0046A18E /* lethimcook */;
+		};
+		ECB9782F2CBD2AEF00FF3D03 /* Exceptions for "lethimcook" folder in "lethimcookTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				fonts/BaksoSapi.otf,
+				"fonts/Onest-Bold.ttf",
+			);
+			target = ECF1825A2CB5812D0046A18E /* lethimcookTests */;
+		};
+		ECB978302CBD2AEF00FF3D03 /* Exceptions for "lethimcook" folder in "lethimcookUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				fonts/BaksoSapi.otf,
+				"fonts/Onest-Bold.ttf",
+			);
+			target = ECF182642CB5812D0046A18E /* lethimcookUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		ECF1824D2CB5812B0046A18E /* lethimcook */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				ECB9782A2CBD2A5C00FF3D03 /* Exceptions for "lethimcook" folder in "lethimcook" target */,
+				ECB9782F2CBD2AEF00FF3D03 /* Exceptions for "lethimcook" folder in "lethimcookTests" target */,
+				ECB978302CBD2AEF00FF3D03 /* Exceptions for "lethimcook" folder in "lethimcookUITests" target */,
+			);
 			path = lethimcook;
 			sourceTree = "<group>";
 		};
@@ -52,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECB978372CBD310A00FF3D03 /* ConfettiView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +149,7 @@
 			);
 			name = lethimcook;
 			packageProductDependencies = (
+				ECB978362CBD310A00FF3D03 /* ConfettiView */,
 			);
 			productName = lethimcook;
 			productReference = ECF1824B2CB5812B0046A18E /* lethimcook.app */;
@@ -196,6 +233,9 @@
 			);
 			mainGroup = ECF182422CB5812B0046A18E;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				ECB978352CBD310A00FF3D03 /* XCRemoteSwiftPackageReference "ConfettiView" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = ECF1824C2CB5812B0046A18E /* Products */;
 			projectDirPath = "";
@@ -421,6 +461,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = lethimcook/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -451,6 +492,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = lethimcook/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -581,6 +623,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ECB978352CBD310A00FF3D03 /* XCRemoteSwiftPackageReference "ConfettiView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ziligy/ConfettiView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ECB978362CBD310A00FF3D03 /* ConfettiView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ECB978352CBD310A00FF3D03 /* XCRemoteSwiftPackageReference "ConfettiView" */;
+			productName = ConfettiView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ECF182432CB5812B0046A18E /* Project object */;
 }

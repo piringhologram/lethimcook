@@ -14,6 +14,8 @@ import SwiftUI
     var instructions: String = ""
     var date = Date()
     var image: String = ""
+    var imageURL: URL?
+    var customImageData: Data?
     var loaded = false
     var showSaveProgressView = false
     var showDeleteProgressView = false
@@ -27,7 +29,7 @@ import SwiftUI
     }
     
     var disableSaveButton: Bool {
-        title.isEmpty || ingredients.isEmpty || instructions.isEmpty || image.isEmpty
+        title.isEmpty || ingredients.isEmpty || instructions.isEmpty
     }
     
     init(_ model: Model, id: Recipe.ID) {
@@ -42,7 +44,9 @@ import SwiftUI
         self.title = recipe.title
         self.ingredients = recipe.ingredients
         self.instructions = recipe.instructions
-        self.image = recipe.image
+        self.image = recipe.image ?? ""
+        self.imageURL = recipe.imageURL
+        self.customImageData = recipe.customImageData
         
         self.loaded = true
     }
@@ -55,7 +59,9 @@ import SwiftUI
                             title: self.title,
                             ingredients: self.ingredients,
                             instructons: self.instructions,
-                            image: self.image)
+                            image: self.image,
+                            imageURL: self.imageURL,
+                            customImageData: self.customImageData)
         DispatchQueue.main.async {
             self.showSaveProgressView = true
         }
@@ -85,6 +91,28 @@ import SwiftUI
         DispatchQueue.main.async {
             self.updateStates()
             self.showDeleteProgressView = false
+        }
+    }
+    
+    func getSingleImage(title: String) async {
+        let urlString = "https://api.spoonacular.com/recipes/complexSearch?apiKey=f581767eca6140b481d5a9daefabd995&query=\(title)&number=1"
+        
+        if let url = URL(string: urlString) {
+            do {
+                let (data, _) = try await URLSession.shared.data(from: url)
+                let response = try JSONDecoder().decode(ImageResponse.self, from: data)
+                
+                print(data)
+                print(response)
+                if let imageUrlString = response.results.first?.image, let imageURL = URL(string: imageUrlString) {
+                    let imageData = try await URLSession.shared.data(from: imageURL).0
+                    DispatchQueue.main.async {
+                        self.customImageData = imageData
+                    }
+                }
+            } catch {
+                print("Failed to fetch image: \(error)")
+            }
         }
     }
 }
