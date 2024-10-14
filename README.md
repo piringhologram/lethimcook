@@ -25,20 +25,38 @@ Until the deadline all of your PRs **need to be merged** and your final app **ne
 
 ## Problem Statement (max. 500 words)
 
-TODO: Add your problem statement here. 
+As a home cook, I often find it challenging to keep my collection of recipes organized and accessible. With many sources of inspiration, I struggle to manage my favorite recipes, often forgetting where I saved them or how to quickly find what I want to cook based on the ingredients I have on hand. This disorganization can lead to wasted ingredients.
 
+To address this issue, I need an iOS application that allows me to efficiently manage my recipes. The app should enable me to add, edit, and delete recipes, as well as view them in a gallery format for quick browsing. The app should also allow me to filter recipes by recently added recipes, favorites, or cooking time, and include a simple search function to quickly find recipes based on keywords. Additionally, it should incorporate an AI feature that generates recipe suggestions based on the ingredients I currently have at home, helping me minimize waste. Overall, the app should provide a user-friendly experience that keeps my recipes organized and easily accessible.
 ## Requirements
 
-TODO: Document the requirements you fulfilled with your app. Discuss them with your tutor.
+I want to be able to…
+
+- … add a new recipe with details such as title, ingredients, image and instructions.
+- … edit existing recipes to update title, ingredients, instructions and image as needed.
+- … delete recipes that I no longer want to keep.
+- … view my recipes in a gallery format.
+- … filter recipes by recently added recipes, or favorites.
+- … search for recipes using keywords related to ingredients or titles.
+- … bookmark favorite recipes for easy access.
+- … generate recipe suggestions based on the ingredients I have at home using AI. (optional)
 
 ## Analysis
-
-TODO: Include an analysis object model. You can use [draw.io](https://draw.io) or [apollon](https://apollon.ase.cit.tum.de) to create it. Please add all models as an Image - not as a link!
+![UML](./UMLClassDiagram.png)
 
 ## System Design
 
-TODO: Include a system design overview describing your application.
+![UML](./system-design-2.png)
 
 ## Product Backlog
 
-TODO: Add a product backlog and don't forget to update it with each MR.
+| id | name | priority |
+| ------ | ------ | ------ |
+|   1   | Add new recipe | Major |
+|   2   | Edit existing recipe | Minor |
+|   3   | Delete existing recipe | Minor |
+|   4   | View recipes in gallery | Major |
+|   5   | Filter recipes | Minor |
+|   6   | Search for recipe | Major |
+|   7   | Bookmark favorite recipe | Minor |
+|   8   | Generate Recipe suggestions | Minor (optional) |

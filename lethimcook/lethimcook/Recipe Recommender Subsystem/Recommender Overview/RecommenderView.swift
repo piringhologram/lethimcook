@@ -10,7 +10,6 @@ import os
 
 struct RecommenderView: View {
     @State private var showConfetti = false
-    
     @Environment(Model.self) private var model: Model
     private let logger = Logger(subsystem: "com.christiandevin.lethimcook", category: "RecommenderView")
     

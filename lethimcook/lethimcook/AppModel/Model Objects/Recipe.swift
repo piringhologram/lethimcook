@@ -16,7 +16,9 @@ public struct ImageResult: Codable {
     let image: String
 }
 
-public struct Recipe: Codable {
+// Identifiable : Used so that object can be identifiable and retrivied by specific ID
+// Hashable : Used because navigationLink needs their components to be Hashable
+public struct Recipe: Identifiable, Hashable, Codable {
     public var id: UUID?
     public var title: String
     public var ingredients: String
@@ -39,15 +41,6 @@ public struct Recipe: Codable {
         }
     }
     
-    /// - Parameters:
-    ///   - id:
-    ///   - title: The name of the recipe
-    ///   - ingredients: Ingredients of the recipe
-    ///   - instructions: Instructions on how to make the recipe
-    ///   - image : personal image corresponding to the recipe
-    ///  - Other attributes:
-    ///    - isFavorite: marks, whether a recipe is marks as the user favorite or not. Default is false
-    ///    - timeAndDate: The date this recipe is created
     public init(id: UUID? = nil,
                 title: String,
                 ingredients: String,
@@ -66,11 +59,6 @@ public struct Recipe: Codable {
         self.customImageData = customImageData
     }
 }
-// Used so that object can be identifiable and retrivied by specific ID
-extension Recipe: Identifiable { }
-
-// Used because navigationLink needs their components to be Hashable
-extension Recipe: Hashable { }
 
 extension Recipe: Comparable {
     public static func < ( a: Recipe, b: Recipe ) -> Bool {
