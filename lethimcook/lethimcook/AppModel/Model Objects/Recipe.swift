@@ -7,7 +7,16 @@
 import Foundation
 import SwiftUI
 
-public struct Recipe {
+public struct ImageResponse: Codable {
+    let results: [ImageResult]
+}
+
+public struct ImageResult: Codable {
+    let title: String
+    let image: String
+}
+
+public struct Recipe: Codable {
     public var id: UUID?
     public var title: String
     public var ingredients: String
@@ -54,7 +63,7 @@ public struct Recipe {
         self.timeAndDate = Date()
         self.image = image
         self.imageURL = imageURL
-        self.customImageData = customImage?.jpegData(compressionQuality: 1)
+        self.customImageData = customImageData
     }
 }
 // Used so that object can be identifiable and retrivied by specific ID
@@ -62,8 +71,6 @@ extension Recipe: Identifiable { }
 
 // Used because navigationLink needs their components to be Hashable
 extension Recipe: Hashable { }
-
-extension Recipe: Codable { }
 
 extension Recipe: Comparable {
     public static func < ( a: Recipe, b: Recipe ) -> Bool {

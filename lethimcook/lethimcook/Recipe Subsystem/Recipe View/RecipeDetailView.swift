@@ -45,14 +45,6 @@ struct RecipeDetailView: View {
                         .clipped()
                         .cornerRadius(22)
                 }
-                Image(model.recipe(id)?.image ?? "")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: UIScreen.main.bounds.width,
-                           height: UIScreen.main.bounds.height * 0.5,
-                           alignment: .center)
-                    .clipped()
-                    .cornerRadius(22)
                 detailView
                 .padding()
             }

@@ -93,4 +93,26 @@ import SwiftUI
             self.showDeleteProgressView = false
         }
     }
+    
+    func getSingleImage(title: String) async {
+        let urlString = "https://api.spoonacular.com/recipes/complexSearch?apiKey=f581767eca6140b481d5a9daefabd995&query=\(title)&number=1"
+        
+        if let url = URL(string: urlString) {
+            do {
+                let (data,_) = try await URLSession.shared.data(from: url)
+                let response = try JSONDecoder().decode(ImageResponse.self, from: data)
+                
+                print(data)
+                print(response)
+                if let imageUrlString = response.results.first?.image, let imageURL = URL(string: imageUrlString) {
+                    let imageData = try await URLSession.shared.data(from: imageURL).0
+                    DispatchQueue.main.async {
+                        self.customImageData = imageData
+                    }
+                }
+            } catch {
+                print("Failed to fetch image: \(error)")
+            }
+        }
+    }
 }

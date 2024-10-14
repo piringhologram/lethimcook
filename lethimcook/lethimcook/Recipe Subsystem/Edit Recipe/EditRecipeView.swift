@@ -16,8 +16,6 @@ struct EditRecipeView: View {
     
     @State private var selectedPhoto: PhotosPickerItem?
     
-    @State private var recipeImage: UIImage?
-    
     init(_ model: Model, id: Recipe.ID) {
         self._editRecipeViewModel = State(wrappedValue: EditRecipeViewModel(model, id: id))
     }
@@ -54,35 +52,46 @@ struct EditRecipeView: View {
     
     private var imageSection: some View {
         Section(header: Text("Image")) {
-            PhotosPicker(selection: $selectedPhoto, matching: .images, photoLibrary: .shared()) {
-                if let recipeImage = recipeImage {
-                    Image(uiImage: recipeImage).resizable()
-                        .scaledToFit()
-                        .cornerRadius(10)
-                } else if let imageURL = editRecipeViewModel.imageURL {
-                    AsyncImage(url: imageURL) { image in
-                        image
-                            .resizable()
-                            .scaledToFit()
-                            .cornerRadius(10)
-                    } placeholder: {
-                        Text("Loading image...")
-                    }
-                } else {
-                    Text("Pick an image")
+            if let selectedPhotoData = editRecipeViewModel.customImageData,
+               let uiImage = UIImage(data: selectedPhotoData) {
+                Image(uiImage: uiImage)
+                    .resizable()
+                    .scaledToFit()
+                    .cornerRadius(10)
+            }
+                            
+            PhotosPicker(selection: $selectedPhoto,
+                         matching: .images,
+                         photoLibrary: .shared()) {
+                Label("Add Image", systemImage: "photo")
+            }
+            
+            Button {
+                Task {
+                    await editRecipeViewModel.getSingleImage(title: editRecipeViewModel.title)
+                }
+            } label: {
+                Label("Add Stock Image", systemImage: "photo")
+                    .foregroundStyle(.blue)
+            }
+            
+            if editRecipeViewModel.customImageData != nil {
+                Button(role: .destructive) {
+                    withAnimation {
+                    selectedPhoto = nil
+                    editRecipeViewModel.customImageData = nil
+                }
+            } label: {
+                Label("Remove Image", systemImage: "xmark")
+                    .foregroundStyle(.red)
                 }
             }
+            
+            
         }
-        .onChange(of: selectedPhoto) { _, _ in
-            Task {
-                if let selectedPhoto,
-                   let data = try? await selectedPhoto.loadTransferable(type: Data.self) {
-                    if let image = UIImage(data: data) {
-                        recipeImage = image
-                        editRecipeViewModel.customImageData = data
-                    }
-            }
-                selectedPhoto = nil
+        .task(id: selectedPhoto) {
+            if let data = try? await selectedPhoto?.loadTransferable(type: Data.self) {
+                editRecipeViewModel.customImageData = data
             }
         }
     }
