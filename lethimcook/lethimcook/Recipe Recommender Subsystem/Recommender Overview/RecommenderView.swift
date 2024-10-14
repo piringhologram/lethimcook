@@ -6,11 +6,13 @@
 //
 import SwiftUI
 import ConfettiView
+import os
 
 struct RecommenderView: View {
     @State private var showConfetti = false
     
     @Environment(Model.self) private var model: Model
+    private let logger = Logger(subsystem: "com.christiandevin.lethimcook", category: "RecommenderView")
     
     var body: some View {
         VStack {
@@ -37,10 +39,12 @@ struct RecommenderView: View {
     
     private func triggerConfetti() {
         showConfetti = true
+        logger.info("Confetti triggered!")
         
         // Turn off confetti after 3 seconds
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             showConfetti = false
+            logger.info("Confetti stopped after 5 seconds")
         }
     }
 }
