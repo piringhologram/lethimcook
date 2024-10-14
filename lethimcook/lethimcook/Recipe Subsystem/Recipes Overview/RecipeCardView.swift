@@ -39,13 +39,13 @@ struct RecipeCardView: View {
         }
         .background(Color(.tertiarySystemFill))
         .cornerRadius(12)
-        .frame(width: UIScreen.main.bounds.width * 0.43, height: 230)
+        .frame(width: UIScreen.main.bounds.width * 0.43, height: 200)
     }
 }
 
 #Preview("RecipeCardView Previews") {
     RecipeCardView(recipe: Recipe(id: UUID(),
-                                  title: "Pasta Carbonara hello",
+                                  title: "Pasta Carbonara stuff",
                                   ingredients: "Egg and Stuff",
                                   instructons: "Add egg then cook",
                                   image: "recipe2"))
